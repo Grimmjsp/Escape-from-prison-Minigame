@@ -8,13 +8,15 @@ print("Escapa de la prisión\n"
 
 decision = input("¿Qué vas a hacer, opción [1] u opción [2]?\n")
 
+# Si decides opción 1
 if decision == "1" or decision == "opción 1" or decision == "opcion 1":
     print("\nHas usado el clip para tratar de abrir la cerradura cuando el guardia no estaba.\nSe escucha un 'click' y la cerradura se abre.\n"
           "Avanzas por el pasillo hasta llegar a una habitación.\n"
           "En ella encuentras una porra.\n"
           "¿Deseas recoger la porra?")
     decision = input("[Si] o [No]")
-
+    
+    # Si decides no coger la porra
     if decision == "No" or decision == "NO" or decision == "nO" or decision == "no":
       print("Sigues avanzando y sales a una especie de patio de recreo.\n"
             "Hay un guardia en el muro de la derecha mirando hacia la salida del patio.\n"
@@ -23,16 +25,17 @@ if decision == "1" or decision == "opción 1" or decision == "opcion 1":
             "puedes tratar de escabullirte sin que te vean para llegar a la salida.\n")
       decision = input("¿Qué vas a hacer, opción [1] u opción [2]?\n")
       
+      # Si decides esperar y forcejear
       if decision == "1" or decision == "opción 1" or decision == "opcion 1":
             print("Consigues llegar hasta el guardia del muro y al forcejear se dispara su arma alertando al guardia apostado. Tratas de correr hacia la salida\n"
                   "pero la puerta se bloquea debido a la alarma. El guardia de la torre te dispara y mueres.\n"
                   "GAME OVER\n"
                   "---------\n")
-                  
+      # Si decides escabullirte de forma sigilosa            
       elif decision == "2" or decision == "opción 2" or decision == "opcion 2":
             chance = random.randint(0, 100)
             print("Probabilidades de éxito {}%".format(chance))
-            
+
             if chance >= 50 <= 100:
                   print("Has conseguido sortear a los guardias y te encuentras en la entrada de la prisión.\n"
                         "Resulta que no hay ningún guardia en el recibidor por lo que procedes a buscar la llave que te hará libre.\n"
@@ -41,8 +44,32 @@ if decision == "1" or decision == "opción 1" or decision == "opcion 1":
                         "puedes tratar de rodear el recibidor para que el guardia no te vea, ver donde guarda la llave y tratar de cogerla sigilosamente.\n")
                   decision = input("¿Qué vas a hacer, opción [1] u opción [2]?")
                   
-                   # Que pasa si no coges la porra, segundo final.
+                  # Si decides neutralizar al guardia
+                  if decision == "1" or decision == "opcion 1" or decision == "opción 1":
+                        print("Tratas de neutralizar al guardia atacándolo con un bolígrafo, por desgracia no consigues atravesar su chaleco pero durante el forcejeo\n"
+                              "se le cae la pistola. La recoges y le disparas. Coges la llave y sales fuera de la prisión pero los demás guardias dieron la voz de alarma.\n"
+                              "Tratas de correr para escabullirte de ellos pero disponen de muchos efectivos por lo que tratas de defenderte con la pistola.\n"
+                              "Los guardias te disparan y te dan. Llegas hasta un coche pero ya has perdido mucha sangre por lo que una vez dentro del coche\n"
+                              "comienzan a cerrarse tus ojos y mueres.\n"
+                              "GAME OVER\n"
+                              "---------\n")
 
+                  # Si decides jugar sigilosamente            
+                  elif decision == "2" or decision == "opcion 2" or decision == "opción 2":
+                        print("Consigues rodear al guardia y observas que la llave está atada a su cinturón. Lanzas un papel hacia un lado y en el descuido\n"
+                              "consigues hacerte con la llave del guardia y escapar. Más adelante te encuentras con un coche. Sacas a su conductor, te montas\n"
+                              "y te marchas a vivir una nueva vida.\n"
+                              "!FELICIDADES¡\n"
+                              "Has completado el juego.\n"
+                              "------------------------\n")
+            
+            elif chance < 50 >= 0:
+                  print("El guardia de la torre te ve tratando de escapar y da la voz de alarma. Las puertas de la prisión se cierran y los guardias te atrapan.\n"
+                        "Vuelves a la celda pero esta vez estás en aislamiento sin posibilidad de escapar.\n"
+                        "GAME OVER\n"
+                        "---------\n")
+
+    # Si decides coger la porra
     elif decision == "Si" or decision == "si" or decision == "sI" or decision == "SI":
         print("Sigues avanzando y sales a una especie de patio de recreo.\n"
               "Hay un guardia en el muro de la derecha mirando hacia la salida del patio.\n"
@@ -51,7 +78,8 @@ if decision == "1" or decision == "opción 1" or decision == "opcion 1":
               "Puedes esperar a que el guardia de la torre se de la vuelta y noquear al otro guardia con la porra o\n"
               "puedes esperar a que el guardia de la torre se de la vuelta y lanzar la porra a un lado para distraer al otro guardia y salir del patio.\n")
         decision = input("¿Que vas a hacer, opción [1] u opción [2]?\n")
-
+        
+        # Decides esperar a que el guardia de la torre se de la vuelta y noquear al otro
         if decision == "1" or decision == "opción 1" or decision == "opcion 1":
             chance = random.randint(0, 100)
             print("Probabilidades de éxito {}%".format(chance))
@@ -63,7 +91,8 @@ if decision == "1" or decision == "opción 1" or decision == "opcion 1":
                       "Puedes tratar de noquear a los guardias en un intento desesperado de salir usando todos los recursos disponibles a tu alcance o\n"
                       "puedes crear una distración para desviar su antención de la salida y escabullirte lo más rápido que puedas.\n")
                 decision = input("Solo se vive una vez [opción 1] o Sneaky like a panthera [opción 2]\n")
-
+                
+                # Decides hacer un YOLO
                 if decision == "1" or decision == "opción 1" or decision == "opcion 1":
                     print("Te lanzas desesperada mente contra los guardas, le clavas un bolígrafo en el cuello a uno y forcejeas con el otro.\n"
                           "Por desgracia el guardia con el bolígrafo clavado no muere y te dispara.\n"
@@ -71,16 +100,39 @@ if decision == "1" or decision == "opción 1" or decision == "opcion 1":
                           "GAME OVER\n"
                           "---------\n")
 
+                # Tratas de hacerlo en sigilo
                 elif decision == "2" or decision == "opción 2" or decision == "opcion 2":
                     print("Llamas la atención de uno de los guardias y consigues abatirlo con un lápiz en el cuello.\n"
-                    )
+                          "Registras al guardia y encuentras la llave que te lleva hacia la libertad.\n"
+                          "Para poder usar la llave tienes que deshacerte del segundo guardia y abrir las puertas de la prisión.\n"
+                          "Puedes coger el arma del guardia abatido y disparar al otro guardia, lo cual alertará a la prisión o\n"
+                          "Puedes usar el walkietalkie del guardia abatido para dar información falsa y hacer que el guardia salga de ahí.\n")
+                    decision = input("¿Qué vas a hacer, opción [1] o opción [2]?\n")
+                    
+                    # Decides armarte y abatir al guardia
+                    if decision == "1" or decision == "opción 1" or decision == "opcion 1":
+                        chance = random.randint(0, 100)
+                        print("Probabilidades de éxito {}%".format(chance))
+
+                        if chance >= 50 <= 100:
+                              print("Recoges el arma del suelo y disparas al guardia, el cual muere al instante. Suena la alarma pero consigues abrir las puertas y salir.\n"
+                                    "Fuera de la prisión robas un coche y te marchas a rehacer tu vida sabiendo que serás siempre perseguido por la justicia.\n"
+                                    "!FELICIDADES¡\n"
+                                    "Has compleado el juego.\n"
+                                    "-----------------------\n")
+
+                        if chance < 50 >= 0:
+                              print("Recoges el arma del suelo y disparas, fallando el primer tiro. El guarda responde pero por desgracia para tí, él no falla.\n"
+                                    "Recibes un disparo en el pecho y mueres desangrado.\n"
+                                    "GAME OVER\n"
+                                    "---------\n")
 
             elif chance < 50 >= 0:
-                print("No has tenido suerte, forcejeas con el guarda pero el palo se rompe.\n"
+                print("No has tenido suerte, forcejeas con el guarda pero la porra se rompe.\n"
                       "Recibes un disparo mortal en el pecho, te desangras y mueres.\n"
                       "GAME OVER\n"
                       "---------\n")
-
+        # Decides esperar y distraer al guardia
         elif decision == "2" or decision == "opción 2" or decision == "opcion 2":
             chance = random.randint(0, 100)
             print("Probabilidades de éxito {}%".format(chance))
